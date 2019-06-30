@@ -1,0 +1,383 @@
+/* ----------------------------------------------------------------------------------------------------
+
+Super Form Reset
+
+A couple of things to watch out for:
+
+- IE8: If a text input doesn't have padding on all sides or none the text won't be centered.
+- The default border sizes on text inputs in all UAs seem to be slightly different. You're better off using custom borders.
+- You NEED to set the font-size and family on all form elements
+- Search inputs need to have their appearance reset and the box-sizing set to content-box to match other UAs
+- You can style the upload button in webkit using ::-webkit-file-upload-button
+- ::-webkit-file-upload-button selectors can't be used in the same selector as normal ones. FF and IE freak out.
+- IE: You don't need to fake inline-block with labels and form controls in IE. They function as inline-block.
+- By turning off ::-webkit-search-decoration, it removes the extra whitespace on the left on search inputs
+
+----------------------------------------------------------------------------------------------------*/
+button,
+input,
+label,
+select,
+textarea {
+    margin: 0;
+    border: 0;
+    padding: 0;
+    display: inline-block;
+    vertical-align: middle;
+    white-space: normal;
+    background: none;
+    line-height: 1;
+    /* Browsers have different default form fonts */
+    font-size: 13px;
+    font-family: Arial;
+    outline: none !important;
+}
+/* Remove the stupid outer glow in Webkit */
+input:focus,
+select:focus {
+    outline: 0;
+}
+/* Box Sizing Reset
+-----------------------------------------------*/
+/* All of our custom controls should be what we expect them to be */
+input,
+textarea {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+}
+/* These elements are usually rendered a certain way by the browser */
+button,
+input[type=button],
+input[type=checkbox],
+input[type=radio],
+input[type=reset],
+input[type=submit],
+select {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/* Text Inputs
+-----------------------------------------------*/
+input[type=date],
+input[type=datetime-local],
+input[type=datetime],
+input[type=email],
+input[type=month],
+input[type=number],
+input[type=password],
+input[type=range],
+input[type=search],
+input[type=tel],
+input[type=text],
+input[type=time],
+input[type=url],
+input[type=week] {}
+/* Button Controls
+-----------------------------------------------*/
+input[type=checkbox],
+input[type=radio] {
+    width: 13px;
+    height: 13px;
+}
+/* File Uploads
+-----------------------------------------------*/
+input[type=file] {}
+/* Search Input
+-----------------------------------------------*/
+/* Make webkit render the search input like a normal text field */
+input[type=search] {
+    -webkit-appearance: textfield;
+    -webkit-box-sizing: content-box;
+}
+/* Turn off the recent search for webkit. It adds about 15px padding on the left */
+::-webkit-search-decoration {
+    display: none;
+}
+/* Buttons
+-----------------------------------------------*/
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    /* Fix IE7 display bug */
+    overflow: visible;
+    width: auto;
+}
+/* IE8 and FF freak out if this rule is within another selector */
+::-webkit-file-upload-button {
+    padding: 0;
+    border: 0;
+    background: none;
+}
+/* Textarea
+-----------------------------------------------*/
+textarea {
+    /* Move the label to the top */
+    vertical-align: top;
+    /* Turn off scroll bars in IE unless needed */
+    overflow: auto;
+}
+/* Selects
+-----------------------------------------------*/
+select {}
+
+select[multiple] {
+    /* Move the label to the top */
+    vertical-align: top;
+}
+
+a {
+    outline: none !important;
+}
+
+.btn-group.open .dropdown-toggle,
+.btn.active,
+.btn:active {
+    box-shadow: none !important;
+    -webkit-box-shadow: none !important;
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+    // border: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
+.dropdown-menu > li > a:focus,
+.dropdown-menu > li > a:hover {
+    color: initial;
+    background-color: initial;
+}
+
+.btn {
+    border: none !important;
+}
+
+.btn-default,
+.btn-default.active,
+.btn-default.active.focus,
+.btn-default.active:focus,
+.btn-default.active:hover,
+.btn-default:active,
+.btn-default:active.focus,
+.btn-default:active:focus,
+.btn-default:active:hover,
+.btn-default:hover,
+.open > .btn-default.dropdown-toggle,
+.open > .btn-default.dropdown-toggle.focus,
+.open > .btn-default.dropdown-toggle:focus,
+.open > .btn-default.dropdown-toggle:hover {
+    color: initial;
+    background-color: initial;
+    border-color: initial;
+}
+
+.slick-slide:focus {
+    outline: none !important;
+}
+// normalize
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+    display: block;
+}
+
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+[hidden] {
+    display: none;
+}
+
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+}
+
+body {
+    margin: 0;
+}
+
+a:focus {
+    outline: thin dotted;
+}
+
+a:active,
+a:hover {
+    outline: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1em;
+}
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+b,
+strong {
+    font-weight: bold;
+}
+
+dfn {
+    font-style: italic;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace,serif;
+    font-size: 1em;
+}
+
+pre {
+    white-space: pre-wrap;
+}
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+small {
+    font-size: 80%;
+}
+
+sub,
+sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+img {
+    border: 0;
+}
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 0;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: inherit;
+    font-size: 100%;
+    margin: 0;
+}
+
+button,
+input {
+    line-height: normal;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+    vertical-align: top;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
