@@ -2,6 +2,10 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import AppInit from './guards/AppInit'
 
+import AuthRoutes from '@/pages/auth/index.js'
+import HomeRoutes from '@/pages/home/index.js'
+import AboutRoutes from '@/pages/about/index.js'
+
 Vue.use(Router)
 
 const router = new Router({
@@ -9,19 +13,9 @@ const router = new Router({
   base: process.env.BASE_URL,
   linkExactActiveClass: 'is-active',
   routes: [
-    {
-      path: '/',
-      name: 'HomeIndex',
-      component: () => import(/* webpackChunkName: "about" */ '@/views/Home.vue')
-    },
-    {
-      path: '/about',
-      name: 'AboutIndex',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ '@/views/About.vue')
-    },
+    ...AuthRoutes,
+    ...HomeRoutes,
+    ...AboutRoutes,
   ]
 })
 

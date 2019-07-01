@@ -16,14 +16,11 @@
       <div id="navbarMenuHeroA" class="navbar-menu">
         <div class="navbar-end">
           <router-link :to="{ name: 'AboutIndex' }" class="navbar-item">
-            about me
+            about
           </router-link>
-          <a class="navbar-item">
-            projects
-          </a>
-          <a class="navbar-item">
-            blog
-          </a>
+          <router-link :to="{ name: 'Login' }" class="navbar-item">
+            login
+          </router-link>
         </div>
       </div>
     </div>
