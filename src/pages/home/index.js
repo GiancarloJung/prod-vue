@@ -1,6 +1,3 @@
-import Home from '@/pages/home/Home'
-import Index from '@/pages/home/Index'
-
 const routes = [
   {
     path: '/',
