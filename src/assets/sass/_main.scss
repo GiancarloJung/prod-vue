@@ -3,21 +3,200 @@
 // ======= //
 
 body, html {
+  min-height:100%; height: 100%; width:100%;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-shadow: 1px 1px 1px rgba(0,0,0,0.004);
-  overflow: initial;
 }
 
-.icon {
-  font-size: 1.5rem;
-  &.is-small {
-    font-size: 1rem;
-  }
-  &.is-medium {
-    font-size: 2rem;
-  }
-  &.is-large {
-    font-size: 3rem;
+body {
+  background: $black;
+}
+
+
+// ========= //
+// TYPOGRAFY //
+// ========= //
+
+h1 {
+}
+
+h2 {
+}
+
+h3 {
+}
+
+h4 {
+}
+
+h5 {
+}
+
+h6 {
+}
+
+a, p, span, strong, small {
+
+}
+
+a, p {
+  @extend %default-text;
+}
+
+strong {
+}
+
+p, strong, span {
+}
+
+a {
+  &:hover {
   }
 }
+
+ul {
+  @include list-unstyled;
+  li {
+    @extend %default-text;
+    display: inline-block;
+  }
+  &.list-featured {
+    li {
+      width: 100%;
+    }
+  }
+}
+
+blockquote {
+  &, p {
+  }
+}
+
+#{$all-buttons}.btn, a.btn {
+  display: inline-block;
+
+  &.btn-primary {
+  }
+
+  &.btn-lg {
+  }
+}
+
+#{$all-buttons-hover}.btn, a.btn:hover {
+  text-decoration: none;
+}
+#{$all-buttons-active}.btn, a.btn:active {
+
+}
+#{$all-buttons-focus}.btn, a.btn:focus {
+
+}
+
+%form-input {
+  box-sizing: border-box;
+  &::-webkit-input-placeholder {
+  }
+  &:-ms-input-placeholder {
+  }
+  &::-moz-placeholder {
+  }
+}
+
+#{$all-text-inputs} {
+  @extend %default-text;
+  box-sizing: border-box;
+  &.form-control {
+    @extend %form-input;
+  }
+}
+
+#{$all-text-inputs-focus} {
+  box-shadow: none;
+}
+
+#{$all-text-inputs-hover} {
+
+}
+
+#{$all-text-inputs-active} {
+}
+
+textarea {
+  &.form-control {
+    @extend %form-input;
+  }
+}
+
+select {
+  &.form-control {
+    @extend %form-input;
+  }
+}
+
+
+input[type="radio"] {
+  .form-check & {
+    + label {
+      &::before {
+      }
+    }
+  }
+  &.invalid + label {
+  }
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+  .form-check & {
+    + label {
+      &::before {
+      }
+    }
+    &:checked + label::before {
+    }
+    &.invalid + label {
+    }
+  }
+
+  .form-check-small & {
+    + label {
+      &::before {
+      }
+    }
+    &.invalid + label {
+    }
+  }
+
+  .form-check-inline & {
+  }
+}
+
+.form-group {
+  label {
+    @extend %default-text;
+  }
+  .btn {
+  }
+}
+
+.input-group {
+
+}
+
+// ======= //
+// HELPERS //
+// ======= //
+
+
+// ========== //
+// COMPONENTS //
+// ========== //
+
+// ======= //
+// SECIONS //
+// ======= //
+
+// ===== //
+// PAGES //
+// ===== //

@@ -1,0 +1,35 @@
+@include font-face(
+  "Ano",
+  "../fonts/AnoRegular-Regular",
+  ("eot", "ttf", "woff2", "woff")
+) {
+  font-style: normal;
+  font-weight: 400;
+}
+
+@include font-face(
+  "Ano",
+  "../fonts/AnoRegular-Italic",
+  ("eot", "ttf", "woff2", "woff")
+) {
+  font-style: italic;
+  font-weight: 400;
+}
+
+@include font-face(
+  "Ano",
+  "../fonts/AnoBold-Regular",
+  ("eot", "ttf", "woff2", "woff")
+) {
+  font-style: normal;
+  font-weight: 700;
+}
+
+@include font-face(
+  "Ano",
+  "../fonts/AnoBold-Italic",
+  ("eot", "ttf", "woff2", "woff")
+) {
+  font-style: italic;
+  font-weight: 700;
+}

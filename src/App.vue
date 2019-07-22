@@ -1,28 +1,36 @@
 <template>
   <div id="app">
-    <Navbar />
-
     <vue-progress-bar/>
 
-    <router-view/>
+    <NavbarDesktop/>
+
+    <vue-page-transition name="fade">
+      <router-view/>
+    </vue-page-transition>
+
+    <NavbarMobile/>
   </div>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
-import { Navbar } from '@/components'
+import { NavbarDesktop, NavbarMobile } from '@/components'
 
 export default {
   name: 'App',
 
   components: {
-    Navbar,
+    NavbarDesktop,
+    NavbarMobile,
   },
+
+  data: () => ({
+  }),
 
   computed: {
     ...mapGetters({
       loggedin: 'auth/LOGGED_IN'
     })
-  }
+  },
 }
 </script>

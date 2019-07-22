@@ -1,162 +1,170 @@
-// Import Bulma's core
-@import "~bulma/sass/utilities/_all";
+// Color system
 
-// Colors
-$black:        hsl(0, 0%, 4%) !default
-$black-bis:    hsl(0, 0%, 7%) !default
-$black-ter:    hsl(0, 0%, 14%) !default
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000000;
 
-$grey-darker:  hsl(0, 0%, 21%) !default
-$grey-dark:    hsl(0, 0%, 29%) !default
-$grey:         hsl(0, 0%, 48%) !default
-$grey-light:   hsl(0, 0%, 71%) !default
-$grey-lighter: hsl(0, 0%, 86%) !default
+$grays: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$grays: map-merge(
+  (
+    "100": $gray-100,
+    "200": $gray-200,
+    "300": $gray-300,
+    "400": $gray-400,
+    "500": $gray-500,
+    "600": $gray-600,
+    "700": $gray-700,
+    "800": $gray-800,
+    "900": $gray-900
+  ),
+  $grays
+);
 
-$white-ter:    hsl(0, 0%, 96%) !default
-$white-bis:    hsl(0, 0%, 98%) !default
-$white:        hsl(0, 0%, 100%) !default
+$blue:    #007bff;
+$indigo:  #6610f2;
+$purple:  #6f42c1;
+$pink:    #e83e8c;
+$red:     #dc3545;
+$orange:  #fd7e14;
+$yellow:  #ffc107;
+$green:   #28a745;
+$teal:    #20c997;
+$cyan:    #17a2b8;
 
-$orange:       hsl(14,  100%, 53%) !default
-$yellow:       hsl(48,  100%, 67%) !default
-$green:        hsl(141, 71%,  48%) !default
-$turquoise:    hsl(171, 100%, 41%) !default
-$cyan:         hsl(204, 86%,  53%) !default
-$blue:         hsl(217, 71%,  53%) !default
-$purple:       hsl(271, 100%, 71%) !default
-$red:          hsl(348, 100%, 61%) !default
+$colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$colors: map-merge(
+  (
+    "blue":       $blue,
+    "indigo":     $indigo,
+    "purple":     $purple,
+    "pink":       $pink,
+    "red":        $red,
+    "orange":     $orange,
+    "yellow":     $yellow,
+    "green":      $green,
+    "teal":       $teal,
+    "cyan":       $cyan,
+    "white":      $white,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-800
+  ),
+  $colors
+);
+
+$primary:       $white;
+$secondary:     $gray-600;
+$success:       $green;
+$info:          $cyan;
+$warning:       $yellow;
+$danger:        $red;
+$light:         $gray-100;
+$dark:          $gray-800;
+
+$theme-colors: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+  (
+    "primary":    $primary,
+    "secondary":  $secondary,
+    "success":    $success,
+    "info":       $info,
+    "warning":    $warning,
+    "danger":     $danger,
+    "light":      $light,
+    "dark":       $dark
+  ),
+  $theme-colors
+);
+
+// The yiq lightness value that determines when the lightness of color changes from "dark" to "light". Acceptable values are between 0 and 255.
+$yiq-contrasted-threshold:  150;
+
+// Customize the light and dark text colors for use in our YIQ color contrast function.
+$yiq-text-dark:             $gray-900;
+$yiq-text-light:            $white;
 
 
+// Options
+//
+// Quickly modify global styling by enabling or disabling optional features.
 
-$primary: $turquoise !default
-
-$info: $cyan !default
-$success: $green !default
-$warning: $yellow !default
-$danger: $red !default
-
-$light: $white-ter !default
-$dark: $grey-darker !default
-
-// Invert colors
-$orange-invert: findColorInvert($orange) !default
-$yellow-invert: findColorInvert($yellow) !default
-$green-invert: findColorInvert($green) !default
-$turquoise-invert: findColorInvert($turquoise) !default
-$cyan-invert: findColorInvert($cyan) !default
-$blue-invert: findColorInvert($blue) !default
-$purple-invert: findColorInvert($purple) !default
-$red-invert: findColorInvert($red) !default
-
-$primary-invert: $turquoise-invert !default
-$info-invert: $cyan-invert !default
-$success-invert: $green-invert !default
-$warning-invert: $yellow-invert !default
-$danger-invert: $red-invert !default
-$light-invert: $dark !default
-$dark-invert: $light !default
-
-// General colors
-$background: $white-ter !default
-
-$border: $grey-lighter !default
-$border-hover: $grey-light !default
-
-// Text colors
-$text: $grey-dark !default
-$text-invert: findColorInvert($text) !default
-$text-light: $grey !default
-$text-strong: $grey-darker !default
-
-// Code colors
-$code: $red !default
-$code-background: $background !default
-
-$pre: $text !default
-$pre-background: $background !default
-
-// Link colors
-$link: $blue !default
-$link-invert: $blue-invert !default
-$link-visited: $purple !default
-
-$link-hover: $grey-darker !default
-$link-hover-border: $grey-light !default
-
-$link-focus: $grey-darker !default
-$link-focus-border: $blue !default
-
-$link-active: $grey-darker !default
-$link-active-border: $grey-dark !default
-
-// Typography
-$family-primary: $family-sans-serif !default
-$family-secondary: $family-sans-serif !default
-$family-code: $family-monospace !default
-
-$size-small: $size-7 !default
-$size-normal: $size-6 !default
-$size-medium: $size-5 !default
-$size-large: $size-4 !default
-
-// Lists and maps
-$custom-colors: null !default
-$custom-shades: null !default
-
-// Typography
-$title-family: 'Maven Pro', sans-serif;
-$font-family-sans-serif: 'Roboto', sans-serif;
-
-$family-sans-serif: $font-family-sans-serif;
-$body-family: $font-family-sans-serif;
-
-$family-monospace: monospace !default
-$render-mode: optimizeLegibility !default
-
-$size-1: 3rem !default
-$size-2: 2.5rem !default
-$size-3: 2rem !default
-$size-4: 1.5rem !default
-$size-5: 1.25rem !default
-$size-6: 1rem !default
-$size-7: 0.75rem !default
-
-$weight-light: 300 !default
-$weight-normal: 400 !default
-$weight-medium: 500 !default
-$weight-semibold: 600 !default
-$weight-bold: 700 !default
+$enable-caret:                                true;
+$enable-rounded:                              false;
+$enable-shadows:                              false;
+$enable-gradients:                            false;
+$enable-transitions:                          true;
+$enable-prefers-reduced-motion-media-query:   true;
+$enable-grid-classes:                         true;
+$enable-pointer-cursor-for-buttons:           true;
+$enable-responsive-font-sizes:                true;
+$enable-validation-icons:                     true;
+$enable-deprecation-messages:                 true;
 
 // Spacing
-$block-spacing: 1.5rem !default
+//
+// Control the default styling of most Bootstrap elements by modifying these
+// variables. Mostly focused on spacing.
+// You can add more entries to the $spacers map, should you need more variation.
 
-// Responsiveness
-// The container horizontal gap, which acts as the offset for breakpoints
-$gap: 32px !default
-// 960, 1152, and 1344 have been chosen because they are divisible by both 12 and 16
-$tablet: 769px !default
-// 960px container + 4rem
-$desktop: 960px + (2 * $gap) !default
-// 1152px container + 4rem
-$widescreen: 1152px + (2 * $gap) !default
-$widescreen-enabled: true !default
-// 1344px container + 4rem
-$fullhd: 1344px + (2 * $gap) !default
-$fullhd-enabled: true !default
+$spacer: 1rem;
+$spacers: ();
+// stylelint-disable-next-line scss/dollar-variable-default
+$spacers: map-merge(
+  (
+    0: 0,
+    1: $spacer * .25,
+    2: $spacer * .5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 3,
+  ),
+  $spacers
+);
 
-// Miscellaneous
-$easing: ease-out !default
-$radius-small: 2px !default
-$radius: 4px !default
-$radius-large: 6px !default
-$radius-rounded: 290486px !default
-$speed: 86ms !default
+// Typography
+//
+// Font, line-height, and color for body text, headings, and more.
 
-// Flags
-$variable-columns: true !default
+// stylelint-disable value-keyword-case
+$font-family-sans-serif:      "Ano", sans-serif;
+$font-family-base:            $font-family-sans-serif;
 
-// coffee pallete
-$iron: #d9d9db;
-$pale-hugger: #D1C6BA;
-$jules: #D1AD88;
-$antique-black: #1A100C;
-$forgotten-name: #1C1414;
+$font-size-base:              1rem;
+
+$h1-font-size:                $font-size-base * 6;
+$h2-font-size:                $font-size-base * 2;
+$h3-font-size:                $font-size-base * 1.75;
+$h4-font-size:                $font-size-base * 1.5;
+$h5-font-size:                $font-size-base * 1.25;
+$h6-font-size:                $font-size-base;
+
+$headings-margin-bottom:      $spacer / 2;
+$headings-font-family:        null;
+$headings-font-style:         null;
+$headings-font-weight:        500;
+$headings-line-height:        1.2;
+$headings-color:              $white;
+
+$text-muted:                  $gray-600;
+
+// Cards
+$card-bg: transparent;
+
+// Paths
+$fa-font-path: "~font-awesome/fonts";
+$icon-font-path: "~bootstrap-sass/assets/fonts/bootstrap/";
+$slick-font-path: "~slick-carousel/slick/fonts/";
+$slick-loader-path: "~slick-carousel/slick/";
+
+// Plyr
+$plyr-color-main: $black;

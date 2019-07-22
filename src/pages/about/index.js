@@ -1,7 +1,7 @@
 const routes = [
   {
-    path: '/',
-    component: () => import(/* webpackChunkName: "about" */ '@/pages/about/About.vue'),
+    path: '/sobre',
+    component: () => import(/* webpackChunkName: "about" */ '@/templates/Page.vue'),
     children: [
       {
         path: '',
