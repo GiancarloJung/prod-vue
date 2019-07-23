@@ -106,7 +106,6 @@
 </template>
 <script>
 import Slick from 'vue-slick'
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock'
 import { ItemJob, ModalJob } from '@/components'
 
 export default {
