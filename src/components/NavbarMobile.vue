@@ -1,13 +1,5 @@
 <template>
   <ul class="nav d-md-none fixed-bottom justify-content-center">
-    <transition name="fade">
-      <li v-if="show" class="nav-item">
-        <router-link :to="{ name: 'HomeIndex' }" class="nav-link">
-          Home
-        </router-link>
-      </li>
-    </transition>
-
     <li class="nav-item">
       <router-link :to="{ name: 'AboutIndex' }" class="nav-link">
         Sobre
