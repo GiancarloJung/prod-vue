@@ -30,10 +30,10 @@
 
         <div class="navigation">
           <button class="prev-job text-white" @click.prevent="$emit('prevJob')">
-            <font-awesome-icon icon="angle-left" size="3x" />
+            <font-awesome-icon icon="chevron-left" size="3x" />
           </button>
           <button class="next-job text-white" @click.prevent="$emit('nextJob')">
-            <font-awesome-icon icon="angle-right" size="3x" />
+            <font-awesome-icon icon="chevron-right" size="3x" />
           </button>
         </div>
       </div>
