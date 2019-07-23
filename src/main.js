@@ -31,6 +31,18 @@ Vue.use(VueProgressBar, {
   thickness: '4px'
 })
 
+import VeeValidate from 'vee-validate'
+Vue.use(VeeValidate, {
+  classes: true,
+  classNames: {
+    valid: 'is-valid',
+    invalid: 'is-invalid'
+  }
+})
+
+import VueTheMask from 'vue-the-mask'
+Vue.use(VueTheMask)
+
 import VuePageTransition from 'vue-page-transition'
 Vue.use(VuePageTransition)
 

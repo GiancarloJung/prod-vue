@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-6 mb-5 mb-lg-0 text-white">
               <div data-aos="fade" data-aos-delay="900" class="d-flex justify-content-around mb-3 aos-nav-anchor">
                 <address class="mb-0">
-                  <strong>BR</strong><br>
+                  <strong><i>BR</i></strong><br>
                   R. Oliveira Dias, 163<br>
                   Jd. Paulista<br>
                   São Paulo, SP 01433 030<br>
@@ -35,7 +35,7 @@
                 </address>
 
                 <address class="mb-0">
-                  <strong>USA</strong><br>
+                  <strong><i>USA</i></strong><br>
                   201 S Biscayne Blvd<br>
                   #1200<br>
                   Miami, FL 33131<br>
@@ -90,23 +90,23 @@
                   <div class="col-12 col-lg-10 offset-lg-1">
                     <div class="form-group">
                       <label for="name">Nome</label>
-                      <input type="text" name="name" autocomplete="name" class="form-control" placeholder="Preencha o seu Nome"/>
+                      <input v-model="contact.name" v-validate="'required|min:5'" type="text" name="name" autocomplete="name" class="form-control" placeholder="Preencha o seu Nome"/>
                     </div>
 
                     <div class="form-group">
                       <label for="phone">Telefone</label>
-                      <input type="text" name="phone" autocomplete="phone" class="form-control" placeholder="Preencha o seu Telefone"/>
+                      <input v-model="contact.phone" v-validate="'required|min:14'" v-mask="['+# (###) ###-####', '+## (##) #####-####', '+## (##) ####-####']" type="text" name="phone" autocomplete="phone" class="form-control" placeholder="Preencha o seu Telefone"/>
                     </div>
 
                     <div class="form-group">
                       <label for="email">Email</label>
-                      <input type="email" autocomplete="email" class="form-control" placeholder="Preencha o seu Email"/>
+                      <input v-model="contact.email" v-validate="'required|email'" type="email" name="email" autocomplete="email" class="form-control" placeholder="Preencha o seu Email"/>
                     </div>
 
                     <div class="form-group">
                       <label for="subject">Assunto</label>
 
-                      <select name="subject" class="custom-select">
+                      <select v-model="contact.subject" v-validate="'required'" name="subject" class="custom-select">
                         <option selected value="contact">Contato</option>
                         <option value="quotation">Orçamento</option>
                         <option value="financial">Financeiro</option>
@@ -117,7 +117,7 @@
 
                     <div class="form-group">
                       <label for="message">Mensagem</label>
-                      <textarea name="message" class="form-control" rows="4" placeholder="Preencha a sua Mensagem"/>
+                      <textarea v-model="contact.message" v-validate="'required|min:5'" name="message" class="form-control" rows="4" placeholder="Preencha a sua Mensagem"/>
                     </div>
 
                     <button @click.prevent="submitForm" class="btn btn-primary pull-right" type="submit">
@@ -136,6 +136,7 @@
 
 <script>
 import AOS from 'aos'
+import { mapActions } from 'vuex'
 import { Modal } from '@/components'
 
 export default {
@@ -146,6 +147,13 @@ export default {
 
   data: () => ({
     showModal: false,
+    contact: {
+      name: '',
+      phone: '',
+      email: '',
+      subject: 'contact',
+      message: ''
+    },
     mapPosition: { lat: -23.5828844, lng: -46.6689258 },
     mapOptions: {
       zoomControl: false,
@@ -270,8 +278,30 @@ export default {
   },
 
   methods: {
+    ...mapActions({
+      postContact: 'POST_CONTACT'
+    }),
+
     submitForm() {
-      this.closeModal()   
+      this.$validator.validateAll().then(result => {
+        if (result) {
+          this.sendContact()
+        }
+      })
+    },
+
+    async sendContact () {
+      const response = await this.postContact({ contact: this.contact })
+
+      if (response) {
+        this.$toasted.show(response.data.message, {
+          duration: 3000,
+          position: 'bottom-right',
+          type: ( response.ok ? "success" : "error" )
+        })
+
+        this.closeModal()
+      }
     },
 
     openModal() {
