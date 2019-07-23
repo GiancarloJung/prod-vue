@@ -102,15 +102,17 @@
         </div>
       </div>
     </div>
+
+    <ScrollIndicator />
   </section>
 </template>
 <script>
 import Slick from 'vue-slick'
-import { ItemJob, ModalJob } from '@/components'
+import { ItemJob, ModalJob, ScrollIndicator } from '@/components'
 
 export default {
   name: "PortfolioIndex",
-  components: { Slick, ItemJob, ModalJob },
+  components: { Slick, ItemJob, ModalJob, ScrollIndicator },
   data: () => ({
     slickImagesOptions: {
       slidesToShow: 1,

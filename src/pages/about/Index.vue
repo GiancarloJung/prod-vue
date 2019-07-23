@@ -69,13 +69,20 @@
         </div>
       </div>
     </div>
+
+    <ScrollIndicator />
   </section>
 </template>
 <script>
+import { ScrollIndicator } from '@/components'
 import AOS from 'aos'
 
 export default {
   name: "AboutIndex",
+  components: {
+    ScrollIndicator
+  },
+
   data: () => ({
     services: [
       {
@@ -251,6 +258,7 @@ export default {
   .concept {
     font-size: 2rem;
   }
+
 
   .item-person {
     width: 14.25%;
