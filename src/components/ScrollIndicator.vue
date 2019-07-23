@@ -1,6 +1,6 @@
 <template>
   <transition name="fade">
-    <span v-if="!scrolledBottom" class="text-white scroll-indicator">
+    <span v-if="!scrolledBottom" class="text-white scroll-indicator d-none d-md-block">
       <font-awesome-icon icon="angle-down" size="3x" />
     </span>
   </transition>
@@ -30,8 +30,8 @@ export default {
   .scroll-indicator {
     position: fixed;
     bottom: 15px;
-    left: 15px;
-    right: 15px;
+    left: 0;
+    right: 0;
     margin: auto;
     width: 30px;
   }

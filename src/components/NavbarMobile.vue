@@ -55,6 +55,10 @@ export default {
     background: linear-gradient(to top, black 0%, rgba(0,0,0,0.70) 35%, transparent 100%);
   }
 
+  .nav-link {
+    padding: 0.5rem 0.75rem;
+  }
+
   .fade-enter-active, .fade-leave-active {
     transition: opacity .3s;
   }

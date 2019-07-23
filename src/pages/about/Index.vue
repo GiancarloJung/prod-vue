@@ -281,5 +281,8 @@ export default {
     .item-person {
       width: 25%;
     }
+    .concept {
+      font-size: 1.2rem;
+    }
   }
 </style>

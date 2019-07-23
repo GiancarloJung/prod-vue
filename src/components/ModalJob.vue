@@ -1,14 +1,14 @@
 <template>
   <transition name="modal">
     <div class="modal-mask" :style="{ backgroundImage: `url('${job.image}')` }">
-      <div class="modal-wrapper">
+      <div class="modal-wrapper vh-100 overflow-auto">
         <button class="close-button text-white" @click.prevent="$emit('close')">
           <font-awesome-icon icon="times" size="3x" />
         </button>
 
         <transition name="fade">
           <div class="container-fluid">
-            <div class="row min-vh-100 p-3 p-lg-5 align-items-center">
+            <div class="row min-vh-100 px-3 py-5 p-lg-5 align-items-center">
               <div class="col-12">
                 <div class="row">
                   <div class="col-12 text-center mb-3 mb-lg-5">
@@ -19,7 +19,7 @@
                     <slot name="video" />
                   </div>
 
-                  <div class="col-12 col-lg-4 align-self-center">
+                  <div class="col-10 offset-1 col-lg-4 offset-lg-0 align-self-center">
                     <slot name="body" />
                   </div>
                 </div>
@@ -59,6 +59,7 @@ export default {
 </script>
 
 <style scoped lang="scss">
+  @import "~bootstrap/scss/bootstrap-grid.scss";
   @import '../assets/sass/variables';
   @import '../assets/sass/helpers';
 
@@ -107,6 +108,23 @@ export default {
     }
   }
 
+  @include media-breakpoint-down(sm) {
+    .close-button {
+      font-size: .75rem;
+    }
+
+    .navigation {
+      .prev-job {
+        left: 5px;
+        font-size: .75rem;
+      }
+      .next-job {
+        right: 5px;
+        font-size: .75rem;
+      }
+    }
+  }
+
   .modal-enter {
     opacity: 0;
   }
@@ -114,7 +132,6 @@ export default {
   .modal-leave-active {
     opacity: 0;
   }
-
 
   .fade-enter-active, .fade-leave-active {
     transition: opacity .3s;
