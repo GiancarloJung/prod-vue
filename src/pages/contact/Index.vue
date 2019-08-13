@@ -27,7 +27,7 @@
             <div class="col-12 col-lg-6 mb-5 mb-lg-0 text-white">
               <div data-aos="fade" data-aos-delay="900" class="d-flex justify-content-around mb-3 aos-nav-anchor">
                 <address class="mb-0">
-                  <strong><i>BR</i></strong><br>
+                  <strong><u>BR</u></strong><br>
                   R. Oliveira Dias, 163<br>
                   Jd. Paulista<br>
                   São Paulo, SP 01433 030<br>
@@ -35,7 +35,7 @@
                 </address>
 
                 <address class="mb-0">
-                  <strong><i>USA</i></strong><br>
+                  <strong><u>USA</u></strong><br>
                   201 S Biscayne Blvd<br>
                   #1200<br>
                   Miami, FL 33131<br>
@@ -63,13 +63,13 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="#">
-                    <font-awesome-icon size="2x" :icon="['fab' , 'youtube']"/>
+                    <font-awesome-icon size="2x" :icon="['fab' , 'vimeo']"/>
                   </a>
                 </li>
               </ul>
 
-              <a href="mailto:contato@produceria.com.br" class="d-block lead text-center mb-3">
-                contato@produceria.com.br
+              <a href="mailto:contato@produceria.com" class="d-block lead text-center mb-3">
+                contato@produceria.com
               </a>
 
               <button @click="openModal" type="button" class="btn btn-primary d-block mx-auto mb-5 mb-lg-0">
