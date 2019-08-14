@@ -2,9 +2,9 @@
 import axios from 'axios'
 import { i18n } from '@/plugins/i18n'
 
-const DEFAULT_LANGUAGE = 'en'
-const FALLBACK_LANGUAGE = 'en'
-const SUPPORTED_LANGUAGES = ['en']
+const DEFAULT_LANGUAGE = 'pt'
+const FALLBACK_LANGUAGE = 'pt'
+const SUPPORTED_LANGUAGES = ['en', 'pt']
 
 const Trans = {
   get defaultLanguage () {

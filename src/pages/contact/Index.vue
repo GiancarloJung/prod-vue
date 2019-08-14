@@ -4,7 +4,7 @@
       <div class="row py-5 min-vh-100 align-items-center">
         <div class="col-12 pt-5">
           <h1 data-aos="fade" class="text-center mb-5">
-            Contato
+            {{ $t('pages.contact.title') }}
           </h1>
 
           <div class="row">
@@ -73,55 +73,67 @@
               </a>
 
               <button @click="openModal" type="button" class="btn btn-primary d-block mx-auto mb-5 mb-lg-0">
-                Entre em Contato
+                {{ $t('pages.contact.button') }}
               </button>
 
               <Modal v-if="showModal" @close="closeModal">
                 <form slot="content">
                   <div class="row">
                     <div class="col-12 text-center">
-                      <h1>Olá!</h1>
+                      <h1>
+                        {{ $t('pages.contact.modal.title') }}
+                      </h1>
                       <p class="lead">
-                        Preencha o formulário abaixo para entrar em contato conosco.
+                        {{ $t('pages.contact.modal.lead') }}
                       </p>
                     </div>
                   </div>
 
                   <div class="col-12 col-lg-10 offset-lg-1">
                     <div class="form-group">
-                      <label for="name">Nome</label>
-                      <input v-model="contact.name" v-validate="'required|min:5'" type="text" name="name" autocomplete="name" class="form-control" placeholder="Preencha o seu Nome"/>
+                      <label for="name">{{ $t('pages.contact.form.name.label') }}</label>
+                      <input v-model="contact.name" v-validate="'required|min:5'" type="text" name="name" autocomplete="name" class="form-control" :placeholder="$t('pages.contact.form.name.placeholder')"/>
                     </div>
 
                     <div class="form-group">
-                      <label for="phone">Telefone</label>
-                      <input v-model="contact.phone" v-validate="'required|min:14'" v-mask="['+# (###) ###-####', '+## (##) #####-####', '+## (##) ####-####']" type="text" name="phone" autocomplete="phone" class="form-control" placeholder="Preencha o seu Telefone"/>
+                      <label for="phone">{{ $t('pages.contact.form.phone.label') }}</label>
+                      <input v-model="contact.phone" v-validate="'required|min:14'" v-mask="['+# (###) ###-####', '+## (##) #####-####', '+## (##) ####-####']" type="text" name="phone" autocomplete="phone" class="form-control" :placeholder="$t('pages.contact.form.phone.placeholder')"/>
                     </div>
 
                     <div class="form-group">
-                      <label for="email">Email</label>
-                      <input v-model="contact.email" v-validate="'required|email'" type="email" name="email" autocomplete="email" class="form-control" placeholder="Preencha o seu Email"/>
+                      <label for="email">{{ $t('pages.contact.form.email.label') }}</label>
+                      <input v-model="contact.email" v-validate="'required|email'" type="email" name="email" autocomplete="email" class="form-control" :placeholder="$t('pages.contact.form.email.placeholder')"/>
                     </div>
 
                     <div class="form-group">
-                      <label for="subject">Assunto</label>
+                      <label for="subject">{{ $t('pages.contact.form.subject.label') }}</label>
 
                       <select v-model="contact.subject" v-validate="'required'" name="subject" class="custom-select">
-                        <option selected value="contact">Contato</option>
-                        <option value="quotation">Orçamento</option>
-                        <option value="financial">Financeiro</option>
-                        <option value="supplier">Fornecedor</option>
-                        <option value="application">Currículo</option>
+                        <option selected value="contact">
+                          {{ $t('pages.contact.form.subject.options.contact') }}
+                        </option>
+                        <option value="quotation">
+                          {{ $t('pages.contact.form.subject.options.quotation') }}
+                        </option>
+                        <option value="financial">
+                          {{ $t('pages.contact.form.subject.options.financial') }}
+                        </option>
+                        <option value="supplier">
+                          {{ $t('pages.contact.form.subject.options.supplier') }}
+                        </option>
+                        <option value="application">
+                          {{ $t('pages.contact.form.subject.options.application') }}
+                        </option>
                       </select>
                     </div>
 
                     <div class="form-group">
-                      <label for="message">Mensagem</label>
-                      <textarea v-model="contact.message" v-validate="'required|min:5'" name="message" class="form-control" rows="4" placeholder="Preencha a sua Mensagem"/>
+                      <label for="message">{{ $t('pages.contact.form.message.label') }}</label>
+                      <textarea v-model="contact.message" v-validate="'required|min:5'" name="message" class="form-control" rows="4" :placeholder="$t('pages.contact.form.message.placeholder')"/>
                     </div>
 
                     <button @click.prevent="submitForm" class="btn btn-primary pull-right" type="submit">
-                      Enviar Mensagem
+                      {{ $t('pages.contact.form.button') }}
                     </button>
                   </div>
                 </form>

@@ -1,0 +1,67 @@
+{
+  "pages": {
+    "about": {
+      "title": "Sobre",
+      "concept": {
+        "title": "Conceito",
+        "description": "O princípio básico da Produceria é produzir coisas. Qualquer tipo de coisa. Um material impresso, um filme, um projeto digital, um projeto especial, uma instalação artística ou até um simples anúncio."
+      },
+      "services": "Serviços",
+      "team": "Equipe"
+    },
+    "clients": {
+      "title": "Clientes"
+    },
+    "contact": {
+      "title": "Contato",
+      "button": "Entre em Contato",
+      "modal": {
+        "title": "Olá!",
+        "lead": "Preencha o formulário abaixo para entrar em contato conosco."
+      },
+      "form": {
+        "name": {
+          "label": "Nome",
+          "placeholder": "Preencha o seu Nome"
+        },
+        "phone": {
+          "label": "Telefone",
+          "placeholder": "Preencha o seu Telefone"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Preencha o seu Email"
+        },
+        "subject": {
+          "label": "Assunto",
+          "options": {
+            "contact": "Contato",
+            "quotation": "Orçamento",
+            "financial": "Financeiro",
+            "supplier": "Fornecedor",
+            "application": "Currículo"
+          }
+        },
+        "message": {
+          "label": "Mensagem",
+          "placeholder": "Preencha a sua Mensagem"
+        },
+        "button": "Enviar Mensagem"
+      }
+    },
+    "home": {
+      "title": "Home"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "cases": "Cases",
+      "awards": "Prêmios",
+      "works": "Outros Trabalhos",
+      "modal": {
+        "client": "Cliente",
+        "agency": "Agência",
+        "media": "Mídia"
+      }
+    }
+  }
+}

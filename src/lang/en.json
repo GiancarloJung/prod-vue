@@ -1,8 +1,67 @@
 {
-  "welcome_message": "Welcome to Your Vue.js App",
-  "popular_links": "Popular Links",
-  "ecosystem": "Ecosystem",
   "pages": {
-    "about": "About Page"
+    "about": {
+      "title": "About",
+      "concept": {
+        "title": "Concept",
+        "description": "Produceria’s basic principle is to produce things. Anything. Printed pieces, film, digital project, special project, installation art or even a simple ad."
+      },
+      "services": "Services",
+      "team": "Team"
+    },
+    "clients": {
+      "title": "Clients"
+    },
+    "contact": {
+      "title": "Contact",
+      "button": "Contact Us",
+      "modal": {
+        "title": "Hi!",
+        "lead": "Fill the form below to contact us."
+      },
+      "form": {
+        "name": {
+          "label": "Name",
+          "placeholder": "Fill your Name"
+        },
+        "phone": {
+          "label": "Phone",
+          "placeholder": "Fill your Phone Number"
+        },
+        "email": {
+          "label": "Email",
+          "placeholder": "Fill your Email"
+        },
+        "subject": {
+          "label": "Subject",
+          "options": {
+            "contact": "Contact",
+            "quotation": "Quotation",
+            "financial": "Financial",
+            "supplier": "Supplier",
+            "application": "Job Application"
+          }
+        },
+        "message": {
+          "label": "Message",
+          "placeholder": "Write your Message"
+        },
+        "button": "Send Message"
+      }
+    },
+    "home": {
+      "title": "Home"
+    },
+    "portfolio": {
+      "title": "Portfolio",
+      "cases": "Cases",
+      "awards": "Awards",
+      "works": "Other Works",
+      "modal": {
+        "client": "Client",
+        "agency": "Agency",
+        "media": "Media"
+      }
+    }
   }
 }

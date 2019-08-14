@@ -6,13 +6,13 @@
           <div class="row">
             <div class="col-12 align-self-center col-lg-6">
               <h1 data-aos="fade">
-                Conceito
+                {{ $t('pages.about.concept.title') }}
               </h1>
             </div>
 
             <div class="col-12 col-lg-6">
               <p data-aos="fade" data-aos-delay="450" class="concept">
-                O princípio básico da Produceria é produzir coisas. Qualquer tipo de coisa. Um material impresso, um filme, um projeto digital, um projeto especial, uma instalação artística ou até um simples anúncio.
+                {{ $t('pages.about.concept.description') }}
               </p>
             </div>
           </div>
@@ -24,7 +24,7 @@
       <div class="row min-vh-100 py-5 align-items-center">
         <div class="col-12 pt-5 text-center">
           <h1 data-aos="fade" class="aos-services-anchor mb-5">
-            Serviços
+            {{ $t('pages.about.services') }}
           </h1>
 
           <div class="row">
@@ -32,7 +32,7 @@
               <div data-aos="fade" :data-aos-delay="150 * (index + 1)" data-aos-anchor=".aos-services-anchor" class="text-center">
                 <font-awesome-icon :icon="service.icon" size="3x" class="mb-3 text-white"/>
 
-                <h4 class="card-title">{{ service.title }}</h4>
+                <h4 v-html="" class="card-title">{{ service.title }}</h4>
                 <p class="card-text">
                   {{ service.description }}
                 </p>
@@ -47,7 +47,7 @@
       <div class="row py-5 min-vh-100 align-items-center">
         <div class="col-12 pt-5 text-center">
           <h1 data-aos="fade" class="aos-team-anchor mb-5">
-            Equipe
+            {{ $t('pages.about.team') }}
           </h1>
 
           <div class="d-flex flex-wrap justify-content-around">
@@ -74,6 +74,7 @@
   </section>
 </template>
 <script>
+import { mapGetters } from 'vuex'
 import { ScrollIndicator } from '@/components'
 import AOS from 'aos'
 
@@ -84,33 +85,6 @@ export default {
   },
 
   data: () => ({
-    services: [
-      {
-        icon: 'sitemap',
-        title: 'Projetos Estruturais',
-        description: 'Análise interna da área de produção, detecção de pontos frágeis, desde equipe a processos e proposta de estruturação às necessidades.',
-      }, {
-        icon: 'star',
-        title: 'Projetos Especiais',
-        description: 'Toda e qualquer ideia-demanda que excede as técnicas conhecidas, ou que requeira um tratamento de produção diferenciado.',
-      }, {
-        icon: 'print',
-        title: 'Projetos Gráficos',
-        description: 'Um execelente design precisa ser complementado com uma ótima técnica de produção gráfica, ajudamos a desenvolvê-lo.',
-      }, {
-        icon: 'images',
-        title: 'Image Retouching',
-        description: 'Valorizamos detalhes importantes de cada imagem, para apresentarem boa resolução e a qualidade necessária para cada tipo de mídia.',
-      }, {
-        icon: 'code',
-        title: 'Projetos Digitais',
-        description: 'Vamos ajudá-lo desde a ideia até a aplicação final. Desenvolvemos para web com foco em design, conteúdo e experiência do usuário.',
-      }, {
-        icon: 'video',
-        title: 'Motion & Filme',
-        description: 'Produzimos filmes, motion graphics, 3D estáticas ou animadas, edição com intercessões entre as técnicas, etc.',
-      }
-    ],
     people: [
       {
         name: 'Allan Nunes',
@@ -241,6 +215,12 @@ export default {
       }
     ]
   }),
+
+  computed: {
+    ...mapGetters({
+      services: "service/GET_SERVICES",
+    })
+  },
 
   mounted() {
     AOS.init({

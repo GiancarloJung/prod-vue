@@ -4,7 +4,7 @@
       <div class="row py-5 min-vh-100 align-items-center">
         <div class="col-12 pt-5 text-center">
           <h1 data-aos="fade" class="mb-5">
-            Clientes
+            {{ $t('pages.clients.title') }}
           </h1>
 
           <div data-aos="fade" data-aos-delay="450" class="d-flex flex-wrap">

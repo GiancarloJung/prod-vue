@@ -11,32 +11,50 @@
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
         <router-link v-if="show" :to="$i18nRoute({ name: 'HomeIndex' })" tag="li" class="navbar-item">
-          <a class="nav-link" href="#">Home</a>
+          <a class="nav-link" href="#">
+            {{ $t('pages.home.title') }}
+          </a>
         </router-link>
 
         <router-link :to="$i18nRoute({ name: 'AboutIndex' })" tag="li" class="navbar-item">
-          <a class="nav-link" href="#">Sobre</a>
+          <a class="nav-link" href="#">
+            {{ $t('pages.about.title') }}
+          </a>
         </router-link>
 
         <router-link :to="$i18nRoute({ name: 'PortfolioIndex' })" tag="li" class="navbar-item">
-          <a class="nav-link" href="#">Portfolio</a>
+          <a class="nav-link" href="#">
+            {{ $t('pages.portfolio.title') }}
+          </a>
         </router-link>
 
         <router-link :to="$i18nRoute({ name: 'ClientsIndex' })" tag="li" class="navbar-item">
-          <a class="nav-link" href="#">Clientes</a>
+          <a class="nav-link" href="#">
+            {{ $t('pages.clients.title') }}
+          </a>
         </router-link>
 
         <router-link :to="$i18nRoute({ name: 'ContactIndex' })" tag="li" class="navbar-item">
-          <a class="nav-link" href="#">Contato</a>
+          <a class="nav-link" href="#">
+            {{ $t('pages.contact.title') }}
+          </a>
         </router-link>
       </ul>
+
+      <LanguageSwitcher />
     </div>
   </nav>
 </template>
 
 <script>
+import { LanguageSwitcher } from '@/components'
+
 export default {
   name: 'NavbarDesktop',
+
+  components: {
+    LanguageSwitcher
+  },
 
   data: () => ({
     activeClass: '',

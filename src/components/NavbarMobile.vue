@@ -2,25 +2,25 @@
   <ul class="nav d-md-none fixed-bottom justify-content-center">
     <li class="nav-item">
       <router-link :to="$i18nRoute({ name: 'AboutIndex' })" class="nav-link">
-        Sobre
+        {{ $t('pages.about.title') }}
       </router-link>
     </li>
 
     <li class="nav-item">
       <router-link :to="$i18nRoute({ name: 'PortfolioIndex' })" class="nav-link">
-        Portfolio
+        {{ $t('pages.portfolio.title') }}
       </router-link>
     </li>
 
     <li class="nav-item">
       <router-link  :to="$i18nRoute({ name: 'ClientsIndex' })" class="nav-link">
-        Clientes
+        {{ $t('pages.clients.title') }}
       </router-link>
     </li>
 
     <li class="nav-item">
       <router-link  :to="$i18nRoute({ name: 'ContactIndex' })" class="nav-link">
-        Contato
+        {{ $t('pages.contact.title') }}
       </router-link>
     </li>
   </ul>
