@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
+import multiguard from 'vue-router-multiguard'
+import { Trans } from '@/plugins/Translation'
+
 import AppInit from './guards/AppInit'
 
 // import AuthRoutes from '@/pages/auth/index.js'
@@ -19,18 +22,28 @@ const router = new Router({
   scrollBehavior (to, from, savedPosition) {
     return { x: 0, y: 0 }
   },
-  routes: [
-    // ...AuthRoutes,
-
-    ...HomeRoutes,
-    ...AboutRoutes,
-    ...PortfolioRoutes,
-    ...ClientsRoutes,
-    ...ContactRoutes,
-
-  ]
+  routes: [{
+    path: '/:lang',
+    component: {
+      template: '<router-view />'
+    },
+    children: [
+      // ...AuthRoutes,
+      ...HomeRoutes,
+      ...AboutRoutes,
+      ...PortfolioRoutes,
+      ...ClientsRoutes,
+      ...ContactRoutes,
+    ]
+  }, {
+    // Redirect user to supported lang version.
+    path: '*',
+    redirect (to) {
+      return Trans.getUserSupportedLang()
+    }
+  }]
 })
 
-router.beforeEach(AppInit)
+router.beforeEach(multiguard([ AppInit, Trans.routeMiddleware ]))
 
 export default router

@@ -60,11 +60,16 @@ Vue.use(VueGoogleMaps, {
 
 import AOS from 'aos'
 
+import { i18n } from '@/plugins/i18n.js'
+import { Trans } from '@/plugins/Translation'
+Vue.prototype.$i18nRoute = Trans.i18nRoute.bind(Trans)
+
 Vue.config.productionTip = false
 
 export default new Vue({
   router,
   store,
+  i18n,
   created() {
     AOS.init({
       duration: 900,

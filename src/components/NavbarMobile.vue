@@ -1,25 +1,25 @@
 <template>
   <ul class="nav d-md-none fixed-bottom justify-content-center">
     <li class="nav-item">
-      <router-link :to="{ name: 'AboutIndex' }" class="nav-link">
+      <router-link :to="$i18nRoute({ name: 'AboutIndex' })" class="nav-link">
         Sobre
       </router-link>
     </li>
 
     <li class="nav-item">
-      <router-link :to="{ name: 'PortfolioIndex' }" class="nav-link">
+      <router-link :to="$i18nRoute({ name: 'PortfolioIndex' })" class="nav-link">
         Portfolio
       </router-link>
     </li>
 
     <li class="nav-item">
-      <router-link  :to="{ name: 'ClientsIndex' }" class="nav-link">
+      <router-link  :to="$i18nRoute({ name: 'ClientsIndex' })" class="nav-link">
         Clientes
       </router-link>
     </li>
 
     <li class="nav-item">
-      <router-link  :to="{ name: 'ContactIndex' }" class="nav-link">
+      <router-link  :to="$i18nRoute({ name: 'ContactIndex' })" class="nav-link">
         Contato
       </router-link>
     </li>

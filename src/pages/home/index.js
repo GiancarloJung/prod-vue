@@ -1,6 +1,6 @@
 const routes = [
   {
-    path: '/',
+    path: '',
     component: () => import(/* webpackChunkName: "home" */ '@/templates/Page.vue'),
     children: [
       {

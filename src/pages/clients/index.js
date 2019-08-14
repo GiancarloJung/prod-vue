@@ -1,6 +1,6 @@
 const routes = [
   {
-    path: '/clients',
+    path: 'clients',
     component: () => import(/* webpackChunkName: "clients" */ '@/templates/Page.vue'),
     children: [
       {

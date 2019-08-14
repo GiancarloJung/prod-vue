@@ -2,7 +2,7 @@ import RedirectIfLoggedIn from '@/router/guards/RedirectIfLoggedIn'
 
 const routes = [
   {
-    path: '/auth/',
+    path: 'auth/',
     component: () => import(/* webpackChunkName: "about" */ '@/pages/auth/Auth.vue'),
     beforeEnter: RedirectIfLoggedIn,
     children: [

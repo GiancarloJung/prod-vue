@@ -3,30 +3,30 @@
     <span class="line align-self-center"></span>
 
     <transition name="fade">
-      <router-link v-if="show" :to="{ name: 'HomeIndex' }" class="navbar-brand d-md-none pull-right">
+      <router-link v-if="show" :to="$i18nRoute({ name: 'HomeIndex' })" class="navbar-brand d-md-none pull-right">
         <img src="@/assets/logo.png" alt="Produceria" class="logo">
       </router-link>
     </transition>
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <router-link v-if="show" :to="{ name: 'HomeIndex' }" tag="li" class="navbar-item">
+        <router-link v-if="show" :to="$i18nRoute({ name: 'HomeIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">Home</a>
         </router-link>
 
-        <router-link :to="{ name: 'AboutIndex' }" tag="li" class="navbar-item">
+        <router-link :to="$i18nRoute({ name: 'AboutIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">Sobre</a>
         </router-link>
 
-        <router-link :to="{ name: 'PortfolioIndex' }" tag="li" class="navbar-item">
+        <router-link :to="$i18nRoute({ name: 'PortfolioIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">Portfolio</a>
         </router-link>
 
-        <router-link :to="{ name: 'ClientsIndex' }" tag="li" class="navbar-item">
+        <router-link :to="$i18nRoute({ name: 'ClientsIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">Clientes</a>
         </router-link>
 
-        <router-link :to="{ name: 'ContactIndex' }" tag="li" class="navbar-item">
+        <router-link :to="$i18nRoute({ name: 'ContactIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">Contato</a>
         </router-link>
       </ul>
