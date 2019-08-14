@@ -54,6 +54,9 @@
     },
     "portfolio": {
       "title": "Portfolio",
+      "client": "Cliente",
+      "agency": "Agência",
+      "media": "Mídia",
       "cases": "Cases",
       "awards": "Prêmios",
       "works": "Outros Trabalhos",
