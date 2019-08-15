@@ -33,7 +33,7 @@ const INITIAL_STATE = {
         name: '2013 Tomorrow Awards',
       }]
     }, {
-      job: 'Balões / A Música não Para',
+      job: 'Balões - A Música não Para',
       award_list: [{
         name: '2012 FIAP',
         category: 'Filme, Craft / Gold'
