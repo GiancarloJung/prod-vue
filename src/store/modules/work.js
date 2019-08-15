@@ -4,53 +4,102 @@ import { Trans } from '@/plugins/Translation'
 const INITIAL_STATE = {
   works: [
     {
+      name: 'Amerant Bank',
+      image: require('@/assets/images/works/amerant1.png'),
+      description: 'Campaign for various media, on and offline.'
+    }, {
+      name: 'Amerant Bank',
+      image: require('@/assets/images/works/amerant2.png'),
+      description: 'Campaign for various media, on and offline.'
+    }, {
+      name: 'Amerant Bank',
+      image: require('@/assets/images/works/amerant3.png'),
+      description: 'Campaign for various media, on and offline.'
+    }, {
+      name: 'Amerant Bank',
+      image: require('@/assets/images/works/amerant4.png'),
+      description: 'Campaign for various media, on and offline.'
+    }, {
       name: 'Sesc',
       image: require('@/assets/images/works/sesc.png'),
       description: 'Landing page Bienal Naïfs do Brasil 2018.'
     }, {
       name: 'Jonson & Jonson',
       image: require('@/assets/images/works/jonson.png'),
-      description: 'Posters para apresentação de campanha.'
+      description: {
+        en: 'Posters for campaign presentation.',
+        pt: 'Posters para apresentação de campanha.'
+      }
     }, {
       name: 'Santander',
       image: require('@/assets/images/works/santander.png'),
-      description: 'Campanha de lançamento do Farol Santander.'
-    }, {
-      name: 'Baden Baden',
-      image: require('@/assets/images/works/baden.png'),
-      description: 'Poster especial, parabéns Campos do Jordão.'
+      description: {
+        en: 'Farol Santander launch campaign.',
+        pt: 'Campanha de lançamento do Farol Santander.'
+      }
     }, {
       name: 'Mitsubishi',
       image: require('@/assets/images/works/mitsubishi.png'),
-      description: 'Campanha de lançamento New Outlander.'
+      description: {
+        en: 'New Outlander launch campaign.',
+        pt: 'Campanha de lançamento New Outlander.'
+      }
     }, {
       name: 'Andorinha',
       image: require('@/assets/images/works/andorinha.png'),
-      description: 'Ilustração, retoque e ambientação (KV).'
+      description: {
+        en: 'Illustration, retouching and Key Vision.',
+        pt: 'Ilustração, retoque e ambientação (KV).'
+      }
     }, {
       name: 'Nubank',
       image: require('@/assets/images/works/nubank1.png'),
-      description: 'Campanha interna para equipe de design.'
+      description: {
+        en: 'Internal campaign for design team.',
+        pt: 'Campanha interna para equipe de design.'
+      }
     }, {
       name: 'Santander',
       image: require('@/assets/images/works/santander2.png'),
-      description: 'Campanha para diversas mídias, on e offline.'
+      description: {
+        en: 'Campaign for various media, on and offline.',
+        pt: 'Campanha para diversas mídias, on e offline.'
+      }
     }, {
       name: 'Localiza Hertz',
       image: require('@/assets/images/works/localiza-hertz.png'),
-      description: 'Campanha de lançamento, fusão de marcas.',
+      description: {
+        en: 'Launch campaign for brand merge.',
+        pt: 'Campanha de lançamento, fusão de marcas.'
+      },
     }, {
       name: 'Doritos',
       image: require('@/assets/images/works/doritos.png'),
-      description: 'Produções de peças para evento Lollapalooza.'
+      description: {
+        en: 'Productions of pieces for Lollapalooza event.',
+        pt: 'Produções de peças para evento Lollapalooza.'
+      }
     }, {
       name: 'Nubank',
       image: require('@/assets/images/works/nubank2.png'),
-      description: 'Welcomekit para equipe de design.'
+      description: {
+        en: 'Welcomekit to design team.',
+        pt: 'Welcomekit para equipe de design.'
+      }
     }, {
       name: 'Dr. Consulta',
       image: require('@/assets/images/works/drconsulta.png'),
-      description: 'Campanha para diversas mídias, on e offline.'
+      description: {
+        en: 'Campaign for various media, on and offline.',
+        pt: 'Campanha para diversas mídias, on e offline.'
+      }
+    }, {
+      name: 'Baden Baden',
+      image: require('@/assets/images/works/baden.png'),
+      description: {
+        en: 'Special poster, congratulations Campos do Jordão.',
+        pt: 'Poster especial, parabéns Campos do Jordão.'
+      }
     }
   ]
 }

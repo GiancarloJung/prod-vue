@@ -4,16 +4,36 @@ import { Trans } from '@/plugins/Translation'
 const INITIAL_STATE = {
   jobs: [
     {
+      name: {
+        en: "April Fools",
+        pt: 'Primeiro de Abril'
+      },
+      image: require('@/assets/images/jobs/eisenbahn2.png'),
+      thumb: require('@/assets/images/jobs/thumb-eisenbahn2.png'),
+      embed_id: '354051631',
+      provider: 'vimeo',
+      order: 1,
+      client: 'Eisenbahn',
+      agency: 'Suno Creators',
+      media: {
+        en: 'Print',
+        pt: 'Impressão'
+      },
+      description: {
+        en: `Eisenbahn has a large beer portfolio, but many people only know one style: Pilsen. So we created a special edition with a label that's not what it appears like, disguising Pale Ale label with Pilsen's yellow color using a special paint coat that reacts when it freezes and reveals Pale Ale's style and the message: "Day of Lies. Real Styles". This limited edition was sent to Pilsen lovers, using April Fools Day to presenting another style, the craft beer world and impacting thousands of people through influencers.`,
+        pt: 'A Eisenbahn tem um grande portfólio de cervejas, mas muita gente só conhece um estilo: a Pilsen. Por isso foi criada uma edição especial com um rótulo que não é o que parece, disfarçando a Pale Ale com a cor amarela da Pilsen usando uma camada de tinta especial que reage quando gela e revelando o estilo da Pale Ale e a mensagem: "Dia da Mentira. Estilos de Verdade". Essa edição limitada foi enviada para apaixonados por Pilsen, aproveitando o Primeiro de Abril para apresentar outro estilo, o mundo das cervejas artesanais e impactando milhares de pessoas atravéz de influenciadores.'
+      }
+    }, {
       name: 'Zoetrope Olinda',
       image: require('@/assets/images/jobs/zoetrope.png'),
       thumb: require('@/assets/images/jobs/thumb-zoetrope.png'),
       embed_id: '349450216',
       provider: 'vimeo',
-      order: 7,
+      order: 8,
       client: 'L’Occitane',
       agency: 'Loducca',
       media: {
-        en: 'Exposição, Internet e Ação Solidária',
+        en: 'Exhibition, Internet and Charity',
         pt: 'Exposição, Internet e Ação Solidária'
       },
       description: {
@@ -29,14 +49,14 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-raquete.png'),
       embed_id: '349450734',
       provider: 'vimeo',
-      order: 6,
+      order: 7,
       client: {
         en: 'Guga Kuerten',
         pt: 'Guga Kuerten'
       },
       agency: 'Loducca',
       media: {
-        en: 'Exposição, Internet, TV, Anúncio de Jornal e Revista',
+        en: 'Exhibition, Internet, TV, Paper and Magazine Ad',
         pt: 'Exposição, Internet, TV, Anúncio de Jornal e Revista',
       },
       description: {
@@ -52,11 +72,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-parafina.png'),
       embed_id: '349451005',
       provider: 'vimeo',
-      order: 11,
+      order: 12,
       client: 'Peugeot',
       agency: 'Loducca',
       media: {
-        en: 'Anúncio de Revista',
+        en: 'Magazine Ad',
         pt: 'Anúncio de Revista'
       },
       description: {
@@ -72,11 +92,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-musica.png'),
       embed_id: '349451602',
       provider: 'vimeo',
-      order: 10,
+      order: 11,
       client: 'MTV',
       agency: 'Loducca',
       media: {
-        en: 'TV e Internet',
+        en: 'TV and Internet',
         pt: 'TV e Internet'
       },
       description: {
@@ -92,11 +112,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-airbag.png'),
       embed_id: '349451960',
       provider: 'vimeo',
-      order: 9,
+      order: 10,
       client: 'Peugeot',
       agency: 'Loducca',
       media: {
-        en: 'Anúncio de Revista',
+        en: 'Magazine Ad',
         pt: 'Anúncio de Revista'
       },
       description: {
@@ -112,10 +132,13 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-comestivel.png'),
       embed_id: '349452589',
       provider: 'vimeo',
-      order: 12,
+      order: 13,
       client: 'MTV',
       agency: 'Loducca',
-      media: 'Sustentabilidade, Anúncio de Revista e Jornal',
+      media: {
+        en: 'Sustainability, Paper and Magazine Ad',
+        pt: 'Sustentabilidade, Anúncio de Revista e Jornal'
+      },
       description: {
         en: 'This ad was conceived as an invitation to present the 4th MTV Youth Universe Dossier, whose focus was on Sustainability. The ad was produced on edible paper and there was a hotsite to encourage people to create unusual recipes using it.',
         pt: 'Anúncio no formato de convite criado para o mercado publicitário para a apresentação do 4º Dossiê Universo Jovem da MTV, com o tema Sustentabilidade. A peça foi produzida em papel comestível e também contou com um hotsite para incentivar as pessoas a criar receitas inusitadas utilizando o anúncio.'
@@ -129,11 +152,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-cinta.png'),
       embed_id: '349452743',
       provider: 'vimeo',
-      order: 13,
+      order: 14,
       client: 'Nextel',
       agency: 'Loducca',
       media: {
-        en: 'Anúncio de Revista',
+        en: 'Magazine Ad',
         pt: 'Anúncio de Revista'
       },
       description: {
@@ -149,14 +172,14 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-loja.png'),
       embed_id: '349452933',
       provider: 'vimeo',
-      order: 8,
+      order: 9,
       client: {
         en: 'Villa Lobos Mall',
         pt: 'Shopping Villa Lobos'
       },
       agency: 'Loducca',
       media: {
-        en: 'Educação Ambiental, Sustentabilidade, TV e Internet',
+        en: 'Environmental Education, Sustainability, TV and Internet',
         pt: 'Educação Ambiental, Sustentabilidade, TV e Internet'
       },
       description: {
@@ -172,11 +195,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-chama.png'),
       embed_id: '349453289',
       provider: 'vimeo',
-      order: 3,
+      order: 4,
       client: 'Santander',
       agency: 'Suno Creators',
       media: {
-        en: 'TV e Internet',
+        en: 'TV and Internet',
         pt: 'TV e Internet'
       },
       description: {
@@ -192,11 +215,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-eisenbahn.png'),
       embed_id: '349453531',
       provider: 'vimeo',
-      order: 2,
+      order: 3,
       client: 'Eisenbahn',
       agency: 'Suno Creators',
       media: {
-        en: 'Mobiliário Urbano, TV e Internet',
+        en: 'Urban Advertising, TV and Internet',
         pt: 'Mobiliário Urbano, TV e Internet'
       },
       description: {
@@ -212,11 +235,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-stories.png'),
       embed_id: '349671844',
       provider: 'vimeo',
-      order: 5,
+      order: 6,
       client: 'Bauducco / Instagram',
       agency: 'CP+B',
       media: {
-        en: 'Internet e Impressão',
+        en: 'Internet and Print',
         pt: 'Internet e Impressão'
       },
       description: {
@@ -232,11 +255,11 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-onda.png'),
       embed_id: '349672087',
       provider: 'vimeo',
-      order: 4,
+      order: 5,
       client: 'Mitsubishi',
       agency: 'Ampfy',
       media: {
-        en: 'Internet e Mídia exterior',
+        en: 'Internet and Urban Ad',
         pt: 'Internet e Mídia exterior'
       },
       description: {
@@ -249,10 +272,13 @@ const INITIAL_STATE = {
       thumb: require('@/assets/images/jobs/thumb-black.png'),
       embed_id: '349672271',
       provider: 'vimeo',
-      order: 1,
+      order: 2,
       client: 'Zumbi dos Palmares',
       agency: 'JWT',
-      media: 'Lorem Ipsum, Dolor Sit',
+      media: {
+        en: 'Print',
+        pt: 'Impressão'
+      },
       description: {
         en: "In order to spread the cultural and historical legacy of the African descent people usually not in textbooks, Zumbi dos Palmares School and J. Walter Thompson Brazil developed the Black Box project, a 200-page book that tells the unpublished story of black people.<br><br>The foundational material was a map of Quilombo dos Palmares region, a symbol of slave resistance in Brazil. Through generative design, small versions of this map were brought together to form various images, leaving the DNA of black history imprinted on each illustration.<br><br>When flipping through the book, readers see pages of translucent paper that hide parts of the text with black boxes that prevent them from reading about the achievements of the African people.",
         pt: 'Com o objetivo de divulgar o legado cultural e histórico dos afrodescendentes que não aparece nos livros didáticos, a Faculdade Zumbi dos Palmares e a J. Walter Thompson Brasil produziram o projeto Black Box. Trata-se de um livro com mais de 200 páginas com conteúdo inédito sobre a história negra.<br><br>Foi usado um mapa da região do Quilombo dos Palmares, símbolo de resistência à escravidão no Brasil. Por meio de design generativo, pequenas versões desse mapa foram reunidas para formar diversas imagens, deixando o DNA da história negra impresso em cada ilustração.<br><br>Ao folhear as páginas, os leitores se deparam com folhas de papel translúcido que omitem partes do texto com caixas pretas, que não permitem ler sobre as conquistas dos povos africanos.'

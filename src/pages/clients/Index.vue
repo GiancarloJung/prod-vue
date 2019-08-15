@@ -25,6 +25,9 @@ export default {
   data: () => ({
     clients: [
       {
+        name: 'Amerant',
+        image: require('@/assets/images/clients/client-amerant.png')
+      }, {
         name: 'Ampfy',
         image: require('@/assets/images/clients/client-ampfy.png')
       }, {
@@ -120,6 +123,9 @@ export default {
       }, {
         name: 'Moura Leite',
         image: require('@/assets/images/clients/client-moura-leite.png')
+      }, {
+        name: 'Nobox',
+        image: require('@/assets/images/clients/client-nbx.png')
       }, {
         name: 'Nubank',
         image: require('@/assets/images/clients/client-nubank.png')
