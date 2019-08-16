@@ -34,7 +34,9 @@
                   Jd. Paulista<br>
                   São Paulo, SP 01433 030<br>
                   +55 11 3854 8035<br>
-                  <a @click="changeLocation('pt')" href="#">show on map</a>
+                  <a @click="changeLocation('pt')" href="#" class="d-inline-block mt-2">
+                    {{ $t('pages.contact.changeLocation') }}
+                  </a>
                 </address>
 
                 <address class="mb-0">
@@ -43,7 +45,9 @@
                   #1200<br>
                   Miami, FL 33131<br>
                   +1 877 917 6648<br>
-                  <a @click="changeLocation('en')" href="#">show on map</a>
+                  <a @click="changeLocation('en')" href="#" class="d-inline-block mt-2">
+                    {{ $t('pages.contact.changeLocation') }}
+                  </a>
                 </address>
               </div>
             </div>

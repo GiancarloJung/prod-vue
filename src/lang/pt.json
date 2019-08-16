@@ -15,6 +15,7 @@
     "contact": {
       "title": "Contato",
       "email": "contato@produceria.com.br",
+      "changeLocation": "Mostrar no Mapa", 
       "button": "Entre em Contato",
       "modal": {
         "title": "Olá!",
