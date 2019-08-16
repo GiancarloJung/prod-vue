@@ -1,16 +1,16 @@
 <template>
-  <nav :class="[activeClass, 'navbar navbar-expand-md fixed-top justify-content-between']">
+  <nav :class="[activeClass, { 'has-background': !isHome }, 'navbar navbar-expand-md fixed-top justify-content-between']">
     <span class="line align-self-center"></span>
 
     <transition name="fade">
-      <router-link v-if="show" :to="$i18nRoute({ name: 'HomeIndex' })" class="navbar-brand d-md-none pull-right">
+      <router-link v-if="!isHome" :to="$i18nRoute({ name: 'HomeIndex' })" class="navbar-brand d-md-none pull-right">
         <img src="@/assets/logo.png" alt="Produceria" class="logo">
       </router-link>
     </transition>
 
     <div class="collapse navbar-collapse">
       <ul class="navbar-nav ml-auto">
-        <router-link v-if="show" :to="$i18nRoute({ name: 'HomeIndex' })" tag="li" class="navbar-item">
+        <router-link v-if="!isHome" :to="$i18nRoute({ name: 'HomeIndex' })" tag="li" class="navbar-item">
           <a class="nav-link" href="#">
             {{ $t('pages.home.title') }}
           </a>
@@ -58,12 +58,12 @@ export default {
 
   data: () => ({
     activeClass: '',
-    show: false
+    isHome: true,
   }),
 
   watch: {
     '$route.name' (to, from) {
-      this.show = to != 'HomeIndex'
+      this.isHome = to == 'HomeIndex'
     }
   },
 
@@ -81,13 +81,15 @@ export default {
   @import '../assets/sass/helpers';
 
   .navbar {
-    background: rgba(0,0,0,.3);
-    &::before {
-      @extend %content;
-      background: linear-gradient(rgba(0,0,0,0.3) 0%, transparent 100%);
-      position: absolute;
-      bottom: -100%;
-      left: 0;
+    &.has-background {
+      background: rgba(0,0,0,.3);
+      &::before {
+        @extend %content;
+        background: linear-gradient(rgba(0,0,0,0.3) 0%, transparent 100%);
+        position: absolute;
+        bottom: -100%;
+        left: 0;
+      }
     }
     .line {
       width: 560px;

@@ -1,5 +1,5 @@
 <template>
-  <ul class="nav d-md-none fixed-bottom justify-content-center">
+  <ul :class="[{ 'has-background': !isHome }, 'nav d-md-none fixed-bottom justify-content-center']">
     <li class="nav-item">
       <router-link :to="$i18nRoute({ name: 'AboutIndex' })" class="nav-link">
         {{ $t('pages.about.title') }}
@@ -31,19 +31,19 @@ export default {
   name: 'NavbarMobile',
 
   data: () => ({
-    show: false
+    isHome: true
   }),
 
   watch: {
     '$route.name' (to, from) {
-      this.show = to != 'HomeIndex'
+      this.isHome = to == 'HomeIndex'
     }
   },
 }
 </script>
 
 <style scoped lang="scss">
-  .nav {
+  .nav.has-background {
     background: linear-gradient(to top, black 0%, rgba(0,0,0,0.70) 35%, transparent 100%);
     height: 60px;
     padding-top: 15px;
