@@ -82,10 +82,10 @@ export default {
 
   .navbar {
     &.has-background {
-      background: rgba(0,0,0,.3);
+      background: rgba(0,0,0,.7);
       &::before {
         @extend %content;
-        background: linear-gradient(rgba(0,0,0,0.3) 0%, transparent 100%);
+        background: linear-gradient(rgba(0,0,0,0.7) 0%, transparent 100%);
         position: absolute;
         bottom: -100%;
         left: 0;
