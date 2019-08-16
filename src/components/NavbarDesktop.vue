@@ -81,7 +81,14 @@ export default {
   @import '../assets/sass/helpers';
 
   .navbar {
-    background: linear-gradient(180deg, black 0%, rgba(0,0,0,0.7) 35%, transparent 100%);
+    background: rgba(0,0,0,.3);
+    &::before {
+      @extend %content;
+      background: linear-gradient(rgba(0,0,0,0.3) 0%, transparent 100%);
+      position: absolute;
+      bottom: -100%;
+      left: 0;
+    }
     .line {
       width: 560px;
       &::before {

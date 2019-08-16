@@ -45,6 +45,8 @@ export default {
 <style scoped lang="scss">
   .nav {
     background: linear-gradient(to top, black 0%, rgba(0,0,0,0.70) 35%, transparent 100%);
+    height: 60px;
+    padding-top: 15px;
   }
 
   .nav-link {
