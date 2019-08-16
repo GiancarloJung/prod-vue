@@ -21,7 +21,6 @@ export default {
   methods: {
     handleScroll(event) {
       this.scrolledBottom = (window.innerHeight + window.scrollY == document.querySelector('#app').offsetHeight)
-
     }
   }
 }

@@ -236,7 +236,7 @@ export default {
   }
 
   .item-work {
-    height: calc(100vh - 3rem);
+    height: calc(100vh - 112px);
     position: relative;
     max-height: 750px;
     background-size: cover;
@@ -275,7 +275,7 @@ export default {
       @include centered;
       z-index: 10;
       max-width: calc(100% - 3rem);
-      max-height: calc(100% - 3rem);
+      max-height: calc(100% - 112px);
     }
   }
 
