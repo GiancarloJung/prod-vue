@@ -10,6 +10,7 @@
           <div class="row">
             <div class="col-12 mb-5">
               <GmapMap
+                v-if="mapPosition"
                 :center="mapPosition"
                 :zoom="16"
                 :options="mapOptions"
@@ -32,7 +33,8 @@
                   R. Oliveira Dias, 163<br>
                   Jd. Paulista<br>
                   São Paulo, SP 01433 030<br>
-                  +55 11 3854 8035
+                  +55 11 3854 8035<br>
+                  <a @click="changeLocation('pt')" href="#">show on map</a>
                 </address>
 
                 <address class="mb-0">
@@ -40,7 +42,8 @@
                   201 S Biscayne Blvd<br>
                   #1200<br>
                   Miami, FL 33131<br>
-                  +1 877 917 6648
+                  +1 877 917 6648<br>
+                  <a @click="changeLocation('en')" href="#">show on map</a>
                 </address>
               </div>
             </div>
@@ -70,7 +73,7 @@
               </ul>
 
               <a href="mailto:contato@produceria.com" class="d-block lead text-center mb-3">
-                contato@produceria.com
+                {{ $t('pages.contact.email') }}
               </a>
 
               <button @click="openModal" type="button" class="btn btn-primary d-block mx-auto mb-5 mb-lg-0">
@@ -148,8 +151,8 @@
 </template>
 
 <script>
-import AOS from 'aos'
 import { mapActions } from 'vuex'
+import { Trans } from '@/plugins/Translation'
 import { Modal } from '@/components'
 
 export default {
@@ -167,7 +170,11 @@ export default {
       subject: 'contact',
       message: ''
     },
-    mapPosition: { lat: -23.5828844, lng: -46.6689258 },
+    mapPositions: {
+      en: { lat: 25.7720909, lng: -80.2217413 },
+      pt: { lat: -23.5828844, lng: -46.6689258 }
+    },
+    mapPosition: false,
     mapOptions: {
       zoomControl: false,
       mapTypeControl: false,
@@ -282,12 +289,20 @@ export default {
     }
   }),
 
+  computed: {
+    currentLanguage () {
+      return Trans.currentLanguage
+    }
+  },
+
+  watch: {
+    currentLanguage: function (newValue, oldValue) {
+      this.mapPosition = _.get(this.mapPositions, [newValue])
+    }
+  },
+
   mounted() {
-    AOS.init({
-      duration: 900,
-      easing: 'ease-in-out',
-      once: true,
-    })
+    this.mapPosition = _.get(this.mapPositions, [this.currentLanguage])
   },
 
   methods: {
@@ -301,6 +316,10 @@ export default {
           this.sendContact()
         }
       })
+    },
+
+    changeLocation(lang) {
+      this.mapPosition = _.get(this.mapPositions, [lang])
     },
 
     async sendContact () {
