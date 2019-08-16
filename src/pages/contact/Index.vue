@@ -20,6 +20,7 @@
                   :position="mapPosition"
                   :clickable="true"
                   :draggable="false"
+                  :icon="{ url: require('@/assets/images/icons/marker.png')}"
                 />
               </GmapMap>
             </div>
