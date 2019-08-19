@@ -80,9 +80,9 @@
                 {{ $t('pages.contact.email') }}
               </a>
 
-              <button @click="openModal" type="button" class="btn btn-primary d-block mx-auto mb-5 mb-lg-0">
+              <!-- <button @click="openModal" type="button" class="btn btn-primary d-block mx-auto mb-5 mb-lg-0">
                 {{ $t('pages.contact.button') }}
-              </button>
+              </button> -->
 
               <Modal v-if="showModal" @close="closeModal">
                 <form slot="content">
