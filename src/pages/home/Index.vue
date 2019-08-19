@@ -1,7 +1,10 @@
 <template>
   <div class="wrapper">
     <div v-if="isDesktop" class="video-background">
-      <video src="@/assets/background.mp4" ref='video' muted loop />
+      <video ref='video' muted loop>
+        <source src="@/assets/background.mp4" type="video/mp4">
+        <source src="@/assets/background.webm" type="video/webm">
+      </video>
     </div>
 
     <div v-if="slider" class="slider-background">
@@ -58,7 +61,7 @@ export default {
   mounted() {
     this.cobra = new Cobra({
       canvas: this.$refs.logo,
-      path: 'http://dev.addicted.coffee/produceria/logo/',
+      path: 'http://produceria.com.br/logo/',
       numberOfFrames: 31,
     })
 
