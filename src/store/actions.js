@@ -3,6 +3,6 @@ import * as _ from 'lodash'
 
 export default {
   async POST_CONTACT({}, { contact }) {
-    return await api.post('contact', contact)
+    return await api.post('action.php', contact)
   },
 }
